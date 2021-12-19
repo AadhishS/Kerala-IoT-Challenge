@@ -52,7 +52,74 @@ ____
 
     {
 
+     pinMode(ledPin, OUTPUT);// define pin 
+26
+____
+27
+# <u><b>LEVEL - I</b></u>
+28
+
+29
+# <u><b>Experiments</b></u>
+30
+
+31
+## Exp 1 : Hello World LED Blinking
+32
+
+33
+### Hardware Needed:
+34
+
+35
+   * Arduino Uno Board x1
+36
+
+37
+   * USB Cable x1
+38
+
+39
+   * LED (Any Color) x1
+40
+
+41
+   * 220 OHM Resistor X1 
+42
+
+43
+   * Breadboard
+44
+
+45
+   * Jumper Wires (Male to Male ) x2
+46
+
+47
+### Code
+48
+
+49
+    int ledPin = 10; // define digital pin 10.
+50
+
+51
+    void setup()
+52
+
+53
+    {
+54
+
+55
      pinMode(ledPin, OUTPUT);// define pin with LED connected as output.
+56
+
+57
+    }
+58
+
+with LED connected as output.
 
     }
 
