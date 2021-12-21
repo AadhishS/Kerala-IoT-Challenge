@@ -26,11 +26,11 @@ I have helped in some computer science and electronics projects. I love to learn
 ____
 ____
 
-# <u><b>LEVEL - I</b></u>
+# <u><b>LEVEL - 1</b></u>
 
 # <u><b>Experiments</b></u>
 
-## Exp 1 : Hello World LED Blinking
+### Exp 1 : Hello World LED Blinking
 
 ### Hardware Needed:
    * Arduino Uno Board x1
@@ -59,3 +59,48 @@ ____
 <iframe width="600" height="315" src="https://youtu.be/GxmuL_qJiPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ___
+# <u><b>LEVEL - 2</b></u>
+
+# <u><b>Experiments</b></u>
+### Exp 2 : Traffic Light
+
+### Hardware required
+  * Arduino board x1
+  * USB cable x1
+  * Red M5 LED x1
+  * Yellow M5 LED x1
+  * Green M5 LED x1
+  * 220Ω resistor x3
+  * Breadboard x1
+  * Breadboard jumper wires as needed
+
+### Code
+    int red =10; // initialize digital pin 8.
+    int yellow =7; // initialize digital pin 7.
+    int green =4; // initialize digital pin 4.
+    void setup()
+    {
+      pinMode(red, OUTPUT);// set red LED pin as “output”
+      pinMode(yellow, OUTPUT); // set yellow LED pin as  “output”
+      pinMode(green, OUTPUT); // set green LED pin as “output”
+    }
+    void loop()
+    {
+      digitalWrite(green, HIGH);// turn on green LED
+      delay(5000);// wait 5 seconds
+      digitalWrite(green, LOW); // turn off green LED
+      for(int i=0;i<3;i++)// blinks for 3 times
+      {
+       delay(500);// wait 0.5 second
+       digitalWrite(yellow, HIGH);// turn on yellow LED
+       delay(500);// wait 0.5 second
+       digitalWrite(yellow, LOW);// turn off yellow LED
+      } 
+      delay(500);// wait 0.5 second
+      digitalWrite(red, HIGH);// turn on red LED
+      delay(5000);// wait 5 seconds
+      digitalWrite(red, LOW);// turn off red LED
+    }
+
+### Video
+<iframe width="600" height="315" src="https://www.youtube.com/embed/-Da8OEcXSas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
