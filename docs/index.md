@@ -1,37 +1,61 @@
-## Welcome to GitHub Pages
+---
 
-You can use the [editor on GitHub](https://github.com/AadhishS/Kerala-IoT-Challenge/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+# Feel free to add content and custom Front Matter to this file.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-### Markdown
+layout: default
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+---
+# Kerala-IoT-Challenge<blockquote>
 
-```markdown
-Syntax highlighted code block
+  <p><strong>Foxlab Makerspace</strong> in association with <strong>GTech - Group of Technology Companies</strong> in Kerala is launching our prestigious program  <strong>“Kerala&nbsp;IoT Challenge 2021”</strong>,  with a vision to mould 100 IoT experts in Kerala, hosting on the µLearn platform. <strong>Kerala IoT Challenge</strong> is a program designed in 4 levels followed by a hackathon to identify and train quality industry leaders in the IoT domain, while any novice learner can start with layer 1 and others can enter laterally to the desired layer after an evaluation.</p>
 
-# Header 1
-## Header 2
-### Header 3
+</blockquote>
 
-- Bulleted
-- List
+# <u><b>About Me</b></u>
 
-1. Numbered
-2. List
+<blockquote>
 
-**Bold** and _Italic_ and `Code` text
+Hi, I am  AADHISH S. I am a second year B-Tech Computer Science student  @ <a href="http://mahagurutech.ac.in" target="_blank">Mahaguru&nbsp; Institute&nbsp; of&nbsp; Technology</a>.
 
-[Link](url) and ![Image](src)
-```
+I have helped in some computer science and electronics projects. I love to learn new things and I like to be updated with development in the Tech Industry. I am Fascinated  about Tech, Business and related stuff.  
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+</blockquote>
 
-### Jekyll Themes
+____
+____
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AadhishS/Kerala-IoT-Challenge/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# <u><b>LEVEL - I</b></u>
 
-### Support or Contact
+# <u><b>Experiments</b></u>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Exp 1 : Hello World LED Blinking
+
+### Hardware Needed:
+   * Arduino Uno Board x1
+   * USB Cable x1
+   * LED (Any Color) x1
+   * 220 OHM Resistor X1 
+   * Breadboard
+   * Jumper Wires (Male to Male ) x2
+
+### Code
+    int ledPin = 10; // define digital pin 10.
+    void setup()
+    {
+     pinMode(ledPin, OUTPUT);// define pin with LED connected as output.
+    }
+    void loop()
+    {
+     digitalWrite(ledPin, HIGH); // set the LED on.
+     delay(1000); // wait for a second.
+     digitalWrite(ledPin, LOW); // set the LED off.
+     delay(1000); // wait for a second
+    }
+
+
+### Video
+<iframe width="600" height="315" src="https://www.youtube.com/embed/EjBNj1aGhZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+___
