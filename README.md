@@ -24,122 +24,38 @@ I have helped in some computer science and electronics projects. I love to learn
 </blockquote>
 
 ____
-# <u><b>LEVEL - I</b></u>
-
-# <u><b>Experiments</b></u>
-
-## Exp 1 : Hello World LED Blinking
-
-### Hardware Needed:
-
-   * Arduino Uno Board x1
-
-   * USB Cable x1
-
-   * LED (Any Color) x1
-
-   * 220 OHM Resistor X1 
-
-   * Breadboard
-
-   * Jumper Wires (Male to Male ) x2
-
-### Code
-
-    int ledPin = 10; // define digital pin 10.
-
-    void setup()
-
-    {
-
-     pinMode(ledPin, OUTPUT);// define pin 
-26
 ____
-27
+
 # <u><b>LEVEL - I</b></u>
-28
 
-29
 # <u><b>Experiments</b></u>
-30
 
-31
 ## Exp 1 : Hello World LED Blinking
-32
 
-33
 ### Hardware Needed:
-34
-
-35
    * Arduino Uno Board x1
-36
-
-37
    * USB Cable x1
-38
-
-39
    * LED (Any Color) x1
-40
-
-41
    * 220 OHM Resistor X1 
-42
-
-43
    * Breadboard
-44
-
-45
    * Jumper Wires (Male to Male ) x2
-46
 
-47
 ### Code
-48
-
-49
     int ledPin = 10; // define digital pin 10.
-50
-
-51
     void setup()
-52
-
-53
     {
-54
-
-55
      pinMode(ledPin, OUTPUT);// define pin with LED connected as output.
-56
-
-57
     }
-58
-
-with LED connected as output.
-
-    }
-
     void loop()
-
     {
-
      digitalWrite(ledPin, HIGH); // set the LED on.
-
      delay(1000); // wait for a second.
-
      digitalWrite(ledPin, LOW); // set the LED off.
-
      delay(1000); // wait for a second
-
     }
+
 
 ### Video
-
-<iframe width="600" height="315" src="https://youtu.be/GxmuL_qJiPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" height="315" src="https://www.youtube.com/embed/EjBNj1aGhZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ___
-
