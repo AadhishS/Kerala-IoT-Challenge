@@ -104,3 +104,36 @@ ___
 
 ### Video
 <iframe width="600" height="315" src="https://www.youtube.com/embed/-Da8OEcXSas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Exp 3 : LED Chasing Effect
+
+### Hardware required
+  * LED x6
+  * Arduino board x1
+  * 220Ω resistor x6
+  * Breadboard x1
+  * USB cable x1
+  * Breadboard wire x13
+
+### Code
+    int first= 2;  // the I/O pin for the first LED
+    int last= 6;   // number of LEDs
+    void setup(){
+     for (int i = start; i < first + last; i ++){
+      pinMode(i, OUTPUT);   // set I/O pins as output
+     }
+    }
+    void loop(){
+     for (int i = BASE; i < start +; i ++){
+      digitalWrite(i, LOW);    // set I/O pins as “low”, turn off LEDs one by one.
+      delay(200);        // delay
+    }
+     for (int i = BASE; i < BASE + NUM; i ++){
+      digitalWrite(i, HIGH);    // set I/O pins as “high”, turn on LEDs one by one
+      delay(200);        // delay
+     }  
+    }
+
+### Video
+<iframe width="600" height="315" src="https://www.youtube.com/embed/dLirEbPWCPg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
