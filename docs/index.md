@@ -7,29 +7,30 @@
 layout: default
 
 ---
-# Kerala-IoT-Challenge
+# Kerala-IoT-Challenge<blockquote>
 
   <p><strong>Foxlab Makerspace</strong> in association with <strong>GTech - Group of Technology Companies</strong> in Kerala is launching our prestigious program  <strong>“Kerala&nbsp;IoT Challenge 2021”</strong>,  with a vision to mould 100 IoT experts in Kerala, hosting on the µLearn platform. <strong>Kerala IoT Challenge</strong> is a program designed in 4 levels followed by a hackathon to identify and train quality industry leaders in the IoT domain, while any novice learner can start with layer 1 and others can enter laterally to the desired layer after an evaluation.</p>
 
-
+</blockquote>
 
 # <u><b>About Me</b></u>
 
-
+<blockquote>
 
 Hi, I am  AADHISH S. I am a second year B-Tech Computer Science student  @ <a href="http://mahagurutech.ac.in" target="_blank">Mahaguru&nbsp; Institute&nbsp; of&nbsp; Technology</a>.
 
 I have helped in some computer science and electronics projects. I love to learn new things and I like to be updated with development in the Tech Industry. I am Fascinated  about Tech, Business and related stuff.  
 
+</blockquote>
 
 ____
 ____
 
-# <u><b>LEVEL - I</b></u>
+# <u><b>LEVEL - 1</b></u>
 
 # <u><b>Experiments</b></u>
 
-## Exp 1 : Hello World LED Blinking
+### Exp 1 : Hello World LED Blinking
 
 ### Hardware Needed:
    * Arduino Uno Board x1
@@ -104,7 +105,11 @@ ___
 ### Video
 <iframe width="600" height="315" src="https://www.youtube.com/embed/-Da8OEcXSas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Exp 3 : LED Chasing Effect
+# <u><b>LEVEL - 3</b></u>
+
+# <u><b>Experiments</b></u>
+
+### Exp 3 : LED Chasing Effect
 
 ### Hardware required
   * LED x6
@@ -136,7 +141,11 @@ ___
 ### Video
 <iframe width="600" height="315" src="https://www.youtube.com/embed/dLirEbPWCPg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Exp 4 : Button Controlled LED
+# <u><b>LEVEL - 4</b></u>
+
+# <u><b>Experiments</b></u>
+
+### Exp 4 : Button Controlled LED
 
 ### Hardware required
 * Arduino Uno
@@ -168,7 +177,12 @@ ___
 ### Video
 <iframe width="600" height="315" src="https://www.youtube.com/embed/xiQ2F2ps62I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Exp 5 : Buzzer
+# <u><b>LEVEL - 5</b></u>
+
+# <u><b>Experiments</b></u>
+
+
+### Exp 5 : Buzzer
 
 ### Hardware required
 * Arduino Uno
@@ -191,7 +205,11 @@ ___
 <iframe width="600" height="315" src="https://www.youtube.com/embed/QN5DBPFhgCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ____
 
-## Exp 6 : RGB LED
+# <u><b>LEVEL - 6</b></u>
+
+# <u><b>Experiments</b></u>
+
+### Exp 6 : RGB LED
 
 ### Hardware required
 * Arduino Uno
@@ -232,7 +250,11 @@ ____
 ### Video
 <iframe width="600" height="315" src="https://www.youtube.com/embed/CHlVNigktpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Exp 7 : LDR Light Sensor
+# <u><b>LEVEL - 7</b></u>
+
+# <u><b>Experiments</b></u>
+
+### Exp 7 : LDR Light Sensor
 
 ### Hardware required
 * Arduino Uno Board
