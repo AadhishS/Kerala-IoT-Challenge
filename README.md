@@ -287,3 +287,593 @@ ____
 ### Video
 <iframe width="600" height="315" src="https://www.youtube.com/embed/ae_OpAmNPWU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ____
+
+
+
+
+
+
+
+
+
+
+<h3 id="experiment-8---flame-sensor">Experiment 8 - Flame Sensor</h3>
+
+<h4 id="components-required-4">Components Required</h4>
+<ul>
+  <li>Arduino Uno Board</li>
+  <li>IR Reciever</li>
+  <li>LED*1</li>
+  <li>10KΩ Resistor*1</li>
+  <li>Breadboard*1</li>
+  <li>Breadboard Jumper Wire*4</li>
+  <li>USB cable*1</li>
+</ul>
+
+
+<h4 id="code-7">Code</h4>
+<pre><code class="language-ino">
+int flame=0;// select analog pin 0 for the sensor
+int LED=9;// select digital pin 9 for the LED
+int val=0;
+ void setup() 
+{
+ pinMode(LED,OUTPUT); 
+ pinMode(flame,INPUT); 
+ Serial.begin(9600);
+void loop() 
+{ 
+  val=analogRead(flame);// read the analog value of the sensor 
+  Serial.println(val);// output and display the analog value
+  if(val&gt;=600)// when the analog value is larger than 600, the led will glow
+  {  
+   digitalWrite(LED,HIGH); 
+   }else 
+   {  
+     digitalWrite(LED,LOW); 
+    }
+   delay(500); 
+}
+</code></pre>
+<h3 id="experiment-9----lm35-temperature-sensor">Experiment 9 -  LM35 Temperature sensor</h3>
+
+<h4 id="components-required-5">Components Required</h4>
+<ul>
+  <li>Arduino Uno Board</li>
+  <li>LM35 Sensor</li>
+  <li>Breadboard*1</li>
+  <li>Breadboard Jumper Wire*3</li>
+  <li>USB cable*1</li>
+</ul>
+
+
+<h4 id="code-8">Code</h4>
+<pre><code class="language-ino">
+int sensorPin = 0; // initialize analog pin 0 for LM35 temperature sensor
+void setup()
+{
+Serial.begin(9600);// set baud rate at”9600”
+}
+void loop()
+{
+int val;// define variable
+int dat;// define variable
+val=analogRead(sensorPin);// read the analog value of the sensor and assign it to val
+dat=(125*val)&gt;&gt;8;// temperature calculation formula
+Serial.print("Tep");// output and display characters beginning with Tep
+Serial.print(dat);// output and display value of dat
+Serial.println("C");// display “C” characters
+delay(500);// wait for 0.5 second
+}
+
+</code></pre>
+<h3 id="experiment-10----ir-remote-control-using-tsop">Experiment 10 -  IR Remote Control Using TSOP</h3>
+
+<h4 id="components-required-6">Components Required</h4>
+<ul>
+  <li>Arduino Uno Board</li>
+  <li>TSOP Sensor</li>
+  <li>LED*4</li>
+  <li>resistor(220 ohm)*4</li>
+  <li>Breadboard*1</li>
+  <li>Breadboard Jumper Wire*8</li>
+  <li>USB cable*1</li>
+  <li>
+    
+  </li>
+</ul>
+
+
+
+<h4 id="code-9">Code</h4>
+<pre><code class="language-ino">#include &lt;IRremote.h&gt;
+
+const int RECV_PIN = 4 ;
+int led1 = 5;
+int led2 = 6;
+int led3 = 7;
+int led4 = 8;
+int itsONled[] = {0,0,0,0,0};
+
+#define code1  48511
+#define code2  38079
+#define code3  49371
+#define code4  15355
+
+
+
+IRrecv irrecv(RECV_PIN);
+decode_results results;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(led1,OUTPUT);
+  pinMode(led2,OUTPUT);
+  pinMode(led3,OUTPUT);
+  pinMode(led4,OUTPUT);
+
+  irrecv.enableIRIn();
+
+}
+
+void loop() {
+
+
+  if (irrecv.decode(&amp;results)) {
+        unsigned int value = results.value;
+        switch(value) {
+           case code1:
+             if(itsONled[1] == 1) {        // if first led is on then
+                digitalWrite(led1, LOW);   // turn it off when button is pressed
+                itsONled[1] = 0;           // and set its state as off
+             } else {                      // else if first led is off
+                 digitalWrite(led1, HIGH); // turn it on when the button is pressed
+                 itsONled[1] = 1;          // and set its state as on
+             }
+              break; 
+           case code2:
+             if(itsONled[2] == 1) {
+                digitalWrite(led2, LOW);
+                itsONled[2] = 0;
+             } else {
+                 digitalWrite(led2, HIGH);
+                 itsONled[2] = 1;
+             }
+              break;
+           case code3:
+             if(itsONled[3] == 1) {
+                digitalWrite(led3, LOW);
+                itsONled[3] = 0;
+             } else {
+                 digitalWrite(led3, HIGH);
+                 itsONled[3] = 1;
+             }
+              break;    
+                case code4:
+             if(itsONled[4] == 1) {
+                digitalWrite(led4, LOW);
+                itsONled[4] = 0;
+             } else {
+                 digitalWrite(led4, HIGH);
+                 itsONled[4] = 1;
+             }
+              break;      
+        }
+        Serial.println(value); 
+        irrecv.resume(); 
+      }
+    }
+
+</code></pre>
+
+<h3 id="experiment-11---potentiometer-analog-value-reading">Experiment 11 - Potentiometer analog Value Reading</h3>
+
+<h4 id="components-required-7">Components Required</h4>
+<ul>
+  <li>Arduino Uno Board</li>
+  <li>Potentiometer*1</li>
+  <li>LED*1</li>
+  <li>220Ω Resistor*1</li>
+  <li>Breadboard*1</li>
+  <li>Breadboard Jumper Wire*5</li>
+  <li>USB cable*1</li>
+</ul>
+
+<h3 id="added-1">ADDED</h3>
+<p>** i added a LED on output of potentiometer, so i can adjut LED’s brightness</p>
+
+
+<h4 id="code-10">Code</h4>
+<pre><code class="language-ino">
+int vr = 0;
+int val;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(vr,INPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  val = analogRead(vr);
+  Serial.println(val);
+
+}
+</code></pre>
+<h3 id="experiment-12---7-segment-display">Experiment 12 - 7 Segment Display</h3>
+
+<h4 id="components-required-8">Components Required</h4>
+<ul>
+  <li>Arduino Uno Board</li>
+  <li>1-digit LED Segment Display*1</li>
+  <li>LED*1</li>
+  <li>220Ω Resistor*8</li>
+  <li>Breadboard*1</li>
+  <li>Breadboard Jumper Wire*10</li>
+  <li>USB cable*1</li>
+</ul>
+
+
+<h4 id="code-11">Code</h4>
+<pre><code class="language-ino">int a=10;// set digital pin 7 for segment a
+int b=11;// set digital pin 6 for segment b
+int c=5;// set digital pin 5 for segment c
+int d=6;// set digital pin 10 for segment d
+int e=7;// set digital pin 11 for segment e
+int f=8;// set digital pin 8 for segment f
+int g=9;// set digital pin 9 for segment g
+int dp=4;// set digital pin 4 for segment dp
+
+void digital_0(void) // display number 0
+{
+unsigned char j;
+digitalWrite(a,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(d,HIGH);
+digitalWrite(f,HIGH);
+digitalWrite(e,HIGH);
+digitalWrite(g,LOW);
+digitalWrite(dp,LOW);
+}
+void digital_1(void) // display number 1
+{
+unsigned char j;
+digitalWrite(a,LOW);
+digitalWrite(b,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(d,LOW);
+digitalWrite(e,LOW);
+digitalWrite(f,LOW);
+digitalWrite(g,LOW);
+digitalWrite(dp,LOW);
+}
+void digital_2(void) // display number 2
+{
+unsigned char j;
+digitalWrite(b,HIGH);
+digitalWrite(a,HIGH);
+digitalWrite(c,LOW);
+digitalWrite(d,HIGH);
+digitalWrite(g,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(e,HIGH);
+digitalWrite(f,LOW);
+}
+void digital_3(void) // display number 3
+{digitalWrite(g,HIGH);
+digitalWrite(a,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(d,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(f,LOW);
+digitalWrite(e,LOW);
+}
+void digital_4(void) // display number 4
+{digitalWrite(c,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(f,HIGH);
+digitalWrite(g,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(a,LOW);
+digitalWrite(e,LOW);
+digitalWrite(d,LOW);
+}
+void digital_5(void) // display number 5
+{
+unsigned char j;
+digitalWrite(a,HIGH);
+digitalWrite(b, LOW);
+digitalWrite(c,HIGH);
+digitalWrite(d,HIGH);
+digitalWrite(e, LOW);
+digitalWrite(f,HIGH);
+digitalWrite(g,HIGH);
+digitalWrite(dp,LOW);
+}
+void digital_6(void) // display number 6
+{
+unsigned char j;
+for(j=7;j&lt;=11;j++)
+digitalWrite(j,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(b,LOW);
+}
+void digital_7(void) // display number 7
+{
+unsigned char j;
+digitalWrite(c,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(f,LOW);
+digitalWrite(g,LOW);
+digitalWrite(dp,LOW);
+digitalWrite(a,HIGH);
+digitalWrite(e,LOW);
+digitalWrite(d,LOW);
+
+}
+void digital_8(void) // display number 8
+{
+unsigned char j;
+for(j=5;j&lt;=11;j++)
+digitalWrite(j,HIGH);
+digitalWrite(dp,LOW);
+}
+void digital_9(void) // display number 5
+{
+unsigned char j;
+digitalWrite(a,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(d,HIGH);
+digitalWrite(e, LOW);
+digitalWrite(f,HIGH);
+digitalWrite(g,HIGH);
+digitalWrite(dp,LOW);
+}
+void setup()
+{
+int i;// set variable
+for(i=4;i&lt;=11;i++)
+pinMode(i,OUTPUT);// set pin 4-11as “output”
+}
+void loop()
+{
+while(1)
+{
+digital_0();// display number 0
+delay(1000);// wait for 1s
+digital_1();// display number 1
+delay(1000);// wait for 1s
+digital_2();// display number 2
+delay(1000); // wait for 1s
+digital_3();// display number 3
+delay(1000); // wait for 1s
+digital_4();// display number 4
+delay(1000); // wait for 1s
+digital_5();// display number 5
+delay(1000); // wait for 1s
+digital_6();// display number 6
+delay(1000); // wait for 1s
+digital_7();// display number 7
+delay(1000); // wait for 1s
+digital_8();// display number 8
+delay(1000); // wait for 1s
+digital_9();// display number 9
+delay(1000); // wait for 1s
+}}
+
+</code></pre>
+<h3 id="assignment-1---automatic-night-lamp">Assignment 1 - Automatic Night Lamp</h3>
+
+<h4 id="components-required-9">Components Required</h4>
+<ul>
+  <li>Arduino Uno Board</li>
+  <li>Photo Resistor*1</li>
+  <li>Red M5 LED*1</li>
+  <li>10KΩ Resistor*1</li>
+  <li>220Ω Resistor*1</li>
+  <li>Breadboard*1</li>
+  <li>Breadboard Jumper Wire*5</li>
+  <li>USB cable*1</li>
+</ul>
+
+<p>LDR</p>
+
+
+
+<h4 id="code-12">Code</h4>
+<pre><code class="language-ino">int led = 4;
+int ldr = 0;
+int ldr_value;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(led,OUTPUT);
+  pinMode(ldr,INPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  ldr_value = analogRead(ldr);
+  Serial.println(ldr_value);
+
+  if(ldr_value &lt; 150){
+    digitalWrite(led,HIGH);
+    
+  }else{
+    digitalWrite(led,LOW);
+  }
+
+}
+
+}
+</code></pre>
+
+<h3 id="assignment-2-digital-dice-using-7-segment-display">Assignment 2 Digital Dice Using 7 Segment Display</h3>
+
+<h4 id="components-required-10">Components Required</h4>
+<ul>
+  <li>Arduino Uno Board</li>
+  <li>7 Segment Display</li>
+  <li>LED*1</li>
+  <li>220Ω Resistor*8</li>
+  <li>Breadboard*1</li>
+  <li>Breadboard Jumper Wire*12</li>
+  <li>USB cable*1</li>
+</ul>
+
+
+<h4 id="code-13">Code</h4>
+<pre><code class="language-ino">int a=10;// set digital pin 7 for segment a
+int b=11;// set digital pin 6 for segment b
+int c=5;// set digital pin 5 for segment c
+int d=6;// set digital pin 10 for segment d
+int e=7;// set digital pin 11 for segment e
+int f=8;// set digital pin 8 for segment f
+int g=9;// set digital pin 9 for segment g
+int dp=4;// set digital pin 4 for segment dp
+
+int btnPin = 3;
+int btnState;
+long ran;
+
+void digital_0(void) // display number 0
+{
+unsigned char j;
+digitalWrite(a,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(d,HIGH);
+digitalWrite(f,HIGH);
+digitalWrite(e,HIGH);
+digitalWrite(g,LOW);
+digitalWrite(dp,LOW);
+}
+void digital_1(void) // display number 1
+{
+unsigned char j;
+digitalWrite(a,LOW);
+digitalWrite(b,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(d,LOW);
+digitalWrite(e,LOW);
+digitalWrite(f,LOW);
+digitalWrite(g,LOW);
+digitalWrite(dp,LOW);
+}
+void digital_2(void) // display number 2
+{
+unsigned char j;
+digitalWrite(b,HIGH);
+digitalWrite(a,HIGH);
+digitalWrite(c,LOW);
+digitalWrite(d,HIGH);
+digitalWrite(g,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(e,HIGH);
+digitalWrite(f,LOW);
+}
+void digital_3(void) // display number 3
+{digitalWrite(g,HIGH);
+digitalWrite(a,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(d,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(f,LOW);
+digitalWrite(e,LOW);
+}
+void digital_4(void) // display number 4
+{digitalWrite(c,HIGH);
+digitalWrite(b,HIGH);
+digitalWrite(f,HIGH);
+digitalWrite(g,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(a,LOW);
+digitalWrite(e,LOW);
+digitalWrite(d,LOW);
+}
+void digital_5(void) // display number 5
+{
+unsigned char j;
+digitalWrite(a,HIGH);
+digitalWrite(b, LOW);
+digitalWrite(c,HIGH);
+digitalWrite(d,HIGH);
+digitalWrite(e, LOW);
+digitalWrite(f,HIGH);
+digitalWrite(g,HIGH);
+digitalWrite(dp,LOW);
+}
+void digital_6(void) // display number 6
+{
+unsigned char j;
+for(j=6;j&lt;=11;j++)
+digitalWrite(j,HIGH);
+digitalWrite(c,HIGH);
+digitalWrite(dp,LOW);
+digitalWrite(b,LOW);
+}
+
+void setup()
+{
+int i;// set variable
+for(i=4;i&lt;=11;i++)
+pinMode(i,OUTPUT);// set pin 4-11as “output”
+pinMode(3,INPUT);
+randomSeed(analogRead(0));
+Serial.begin(9600);
+}
+void loop()
+{
+  btnState = digitalRead(btnPin);
+  if (btnState == HIGH){
+    ran = random(1,7);
+    Serial.println(ran);
+    if (ran == 1){
+      digital_1();
+      delay(2000);
+    }
+    if (ran == 2){
+      digital_2();
+      delay(2000);
+    }
+    if (ran == 3){
+      digital_3();
+      delay(2000);
+    }
+    if (ran == 4){
+      digital_4();
+      delay(2000);
+    }
+    if (ran == 5){
+      digital_5();
+      delay(2000);
+    }
+    if (ran == 6){
+      digital_6();
+      delay(2000);
+    }
+  }
+  else{
+    digitalWrite(a,LOW);
+    digitalWrite(b,LOW);
+    digitalWrite(c,LOW);
+    digitalWrite(d,LOW);
+    digitalWrite(e,LOW);
+    digitalWrite(f,LOW);
+    digitalWrite(g,LOW);
+    digitalWrite(dp,LOW);
+    }
+}
+
+
+
+
+
